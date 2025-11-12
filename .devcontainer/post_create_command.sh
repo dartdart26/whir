@@ -11,5 +11,5 @@ rustup toolchain install
 rustup component add rustfmt
 rustup component add clippy
 
-# Solana.
-curl --proto '=https' --tlsv1.2 -sSfL https://solana-install.solana.workers.dev | bash
+# Solana CLI.
+sh -c "$(curl -sSfL --proto '=https' --tlsv1.2 https://release.anza.xyz/stable/install)"
