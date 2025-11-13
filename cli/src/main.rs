@@ -9,7 +9,7 @@ use ark_serialize::CanonicalSerialize;
 use clap::Parser;
 use spongefish::{DomainSeparator, ProverState, VerifierState};
 use spongefish_pow::blake3::Blake3PoW;
-use whir::{
+use whir_common::{
     cmdline_utils::{AvailableFields, AvailableMerkle, WhirType},
     crypto::{
         fields,
@@ -206,7 +206,7 @@ fn run_whir_as_ldt<F, MerkleConfig>(
     ProverState: DigestToUnitSerialize<MerkleConfig>,
     for<'a> VerifierState<'a>: DigestToUnitDeserialize<MerkleConfig>,
 {
-    use whir::whir::{
+    use whir_common::whir::{
         committer::CommitmentWriter, domainsep::WhirDomainSeparator, parameters::WhirConfig,
         prover::Prover, verifier::Verifier,
     };
@@ -327,7 +327,7 @@ fn run_whir_pcs<F, MerkleConfig>(
     ProverState: DigestToUnitSerialize<MerkleConfig>,
     for<'a> VerifierState<'a>: DigestToUnitDeserialize<MerkleConfig>,
 {
-    use whir::whir::{
+    use whir_common::whir::{
         committer::CommitmentWriter, domainsep::WhirDomainSeparator, parameters::WhirConfig,
         prover::Prover, statement::Statement, verifier::Verifier,
     };

@@ -1,4 +1,4 @@
-[package]
+[workspace.package]
 name = "whir"
 version = "0.1.0"
 edition = "2021"
@@ -6,7 +6,15 @@ edition = "2021"
 default-run = "main"
 rust-version = "1.83.0"
 
-[lints.clippy]
+[workspace]
+members = [
+    "prover",
+    "verifier",
+    "common",
+    "cli"
+]
+
+[workspace.lints.clippy]
 # all lints that are on by default (correctness, suspicious, style, complexity, perf)
 all = { level = "warn", priority = -1 }
 
@@ -32,7 +40,7 @@ suboptimal_flops = "allow"
 similar_names = "allow"
 redundant_closure_for_method_calls = "allow"
 
-[dependencies]
+[workspace.dependencies]
 ark-std = { version = "0.5", features = ["std"] }
 ark-ff = { version = "0.5", features = ["asm", "std"] }
 ark-serialize = "0.5"
@@ -48,37 +56,19 @@ spongefish = { git = "https://github.com/arkworks-rs/spongefish", features = [
     "arkworks-algebra",
 ] }
 spongefish-pow = { git = "https://github.com/arkworks-rs/spongefish" }
-rayon = { version = "1.10.0", optional = true }
 thiserror = "2.0"
 itertools = "0.14"
-tracing = { version = "0.1.41", optional = true }
 hex = "0.4.3"
+whir-common = { path = "common/", default-features = true }
 
-[dev-dependencies]
+[workspace.dev-dependencies]
 proptest = "1.0"
 serde_json = "1.0"
 postcard = { version = "1.1", features = ["alloc"] }
-divan = { version = "2.10.0", package = "codspeed-divan-compat" }
 
 [profile.release]
 debug = true
 
-[features]
-default = ["parallel"]
-parallel = [
-    "dep:rayon",
-    "ark-poly/parallel",
-    "ark-ff/parallel",
-    "ark-crypto-primitives/parallel",
-]
-rayon = ["dep:rayon"]
-asm = ["ark-ff/asm"]
-tracing = ["dep:tracing"]
 
-[[bench]]
-name = "expand_from_coeff"
-harness = false
 
-[[bench]]
-name = "sumcheck"
-harness = false
+
