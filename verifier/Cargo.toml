@@ -1,0 +1,9 @@
+[package]
+name = "whir-verifier"
+description = "whir verifier"
+version.workspace = true
+edition.workspace = true
+publish = false
+
+[features]
+# asm = ["ark-ff/asm"]
