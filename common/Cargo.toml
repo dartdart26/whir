@@ -6,21 +6,27 @@ edition.workspace = true
 publish = false
 
 [dependencies]
-ark-ff = { workspace = true }
 ark-crypto-primitives = { workspace = true }
-spongefish = { workspace = true }
+ark-ff = { workspace = true }
 ark-poly = { workspace = true }
-spongefish-pow = { workspace = true }
 ark-serialize = { workspace = true }
+blake3 = { workspace = true }
+hex = { workspace = true }
 itertools = { workspace = true }
 rand = { workspace = true }
+rayon = { version = "1.10.0", optional = true }
 serde = { workspace = true }
 sha3 = { workspace = true }
+spongefish = { workspace = true }
+spongefish-pow = { workspace = true }
 thiserror = { workspace = true }
-hex = { workspace = true }
-blake3 = { workspace = true }
-rayon = { version = "1.10.0", optional = true }
 tracing = { version = "0.1.41", optional = true }
+
+[dev-dependencies]
+ark-std = { workspace = true }
+postcard = { workspace = true }
+proptest = { workspace = true }
+serde_json = { workspace = true }
 
 [features]
 default = ["parallel"]
