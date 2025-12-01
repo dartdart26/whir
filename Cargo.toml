@@ -1,18 +1,12 @@
 [workspace.package]
-name = "whir"
 version = "0.1.0"
 edition = "2021"
 
-default-run = "main"
 rust-version = "1.83.0"
 
 [workspace]
-members = [
-    "prover",
-    "verifier",
-    "common",
-    "cli"
-]
+resolver = "2"
+members = ["prover", "verifier", "common", "cli"]
 
 [workspace.lints.clippy]
 # all lints that are on by default (correctness, suspicious, style, complexity, perf)
@@ -48,22 +42,21 @@ ark-serialize = "0.5"
 ark-std = { version = "0.5", features = ["std"] }
 blake3 = "1.5.0"
 clap = { version = "4.4.17", features = ["derive"] }
+common = { path = "common/" }
 hex = "0.4.3"
 itertools = "0.14"
 postcard = { version = "1.1", features = ["alloc"] }
 proptest = "1.0"
-rand = "0.8"
+rand = { version = "0.8" }
 serde = { version = "1.0", features = ["derive"] }
 serde_json = "1.0"
 sha3 = "0.10"
-spongefish = { git = "https://github.com/arkworks-rs/spongefish", features = ["arkworks-algebra"] }
+spongefish = { git = "https://github.com/arkworks-rs/spongefish", features = [
+    "arkworks-algebra",
+] }
 spongefish-pow = { git = "https://github.com/arkworks-rs/spongefish" }
 thiserror = "2.0"
-whir-common = { path = "common/", default-features = true }
+verifier = { path = "verifier/" }
 
 [profile.release]
 debug = true
-
-
-
-

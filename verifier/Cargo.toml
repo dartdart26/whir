@@ -1,9 +1,14 @@
 [package]
-name = "whir-verifier"
-description = "whir verifier"
+name = "verifier"
+description = "verifier"
 version.workspace = true
 edition.workspace = true
 publish = false
 
-[features]
-# asm = ["ark-ff/asm"]
+[dependencies]
+ark-crypto-primitives = { workspace = true }
+ark-ff = { workspace = true }
+common = { workspace = true }
+getrandom = { version = "0.2", features = ["custom"] }
+spongefish = { workspace = true }
+spongefish-pow = { workspace = true }

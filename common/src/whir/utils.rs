@@ -125,7 +125,7 @@ pub trait DigestToUnitDeserialize<MerkleConfig: Config> {
     fn read_digest(&mut self) -> ProofResult<MerkleConfig::InnerDigest>;
 }
 
-pub(crate) fn rlc_batched_leaves<F: ark_ff::Field>(
+pub fn rlc_batched_leaves<F: ark_ff::Field>(
     leaves: Vec<Vec<F>>,
     fold_size: usize,
     batch_size: usize,

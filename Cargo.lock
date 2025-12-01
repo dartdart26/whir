@@ -396,6 +396,22 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "f46ad14479a25103f283c0f10005961cf086d8dc42205bb44c46ac563475dca6"
 
 [[package]]
+name = "cli"
+version = "0.1.0"
+dependencies = [
+ "ark-crypto-primitives",
+ "ark-ff",
+ "ark-serialize",
+ "ark-std",
+ "clap",
+ "codspeed-divan-compat",
+ "common",
+ "spongefish",
+ "spongefish-pow",
+ "verifier",
+]
+
+[[package]]
 name = "cobs"
 version = "0.3.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -471,6 +487,31 @@ checksum = "117725a109d387c937a1533ce01b450cbde6b88abceea8473c4d7a85853cda3c"
 dependencies = [
  "lazy_static",
  "windows-sys 0.59.0",
+]
+
+[[package]]
+name = "common"
+version = "0.1.0"
+dependencies = [
+ "ark-crypto-primitives",
+ "ark-ff",
+ "ark-poly",
+ "ark-serialize",
+ "ark-std",
+ "blake3",
+ "hex",
+ "itertools 0.14.0",
+ "postcard",
+ "proptest",
+ "rand 0.8.5",
+ "rayon",
+ "serde",
+ "serde_json",
+ "sha3",
+ "spongefish",
+ "spongefish-pow",
+ "thiserror",
+ "tracing",
 ]
 
 [[package]]
@@ -944,6 +985,10 @@ dependencies = [
 ]
 
 [[package]]
+name = "prover"
+version = "0.1.0"
+
+[[package]]
 name = "quick-error"
 version = "1.2.3"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -1396,6 +1441,18 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "ba73ea9cf16a25df0c8caa16c51acb937d5712a8429db78a3ee29d5dcacd3a65"
 
 [[package]]
+name = "verifier"
+version = "0.1.0"
+dependencies = [
+ "ark-crypto-primitives",
+ "ark-ff",
+ "common",
+ "getrandom 0.2.16",
+ "spongefish",
+ "spongefish-pow",
+]
+
+[[package]]
 name = "version_check"
 version = "0.9.5"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -1424,54 +1481,6 @@ checksum = "9683f9a5a998d873c0d21fcbe3c083009670149a8fab228644b8bd36b2c48cb3"
 dependencies = [
  "wit-bindgen-rt",
 ]
-
-[[package]]
-name = "whir-cli"
-version = "0.1.0"
-dependencies = [
- "ark-crypto-primitives",
- "ark-ff",
- "ark-serialize",
- "ark-std",
- "clap",
- "codspeed-divan-compat",
- "spongefish",
- "spongefish-pow",
- "whir-common",
-]
-
-[[package]]
-name = "whir-common"
-version = "0.1.0"
-dependencies = [
- "ark-crypto-primitives",
- "ark-ff",
- "ark-poly",
- "ark-serialize",
- "ark-std",
- "blake3",
- "hex",
- "itertools 0.14.0",
- "postcard",
- "proptest",
- "rand 0.8.5",
- "rayon",
- "serde",
- "serde_json",
- "sha3",
- "spongefish",
- "spongefish-pow",
- "thiserror",
- "tracing",
-]
-
-[[package]]
-name = "whir-prover"
-version = "0.1.0"
-
-[[package]]
-name = "whir-verifier"
-version = "0.1.0"
 
 [[package]]
 name = "windows-link"

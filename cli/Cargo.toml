@@ -1,21 +1,20 @@
 [package]
-name = "whir-cli"
-description = "cli proover and verifier implementation"
+name = "cli"
+description = "cli prover and verifier implementation"
 version.workspace = true
 edition.workspace = true
 publish = false
 
 [dependencies]
-ark-std= { workspace = true }
+ark-std = { workspace = true }
 ark-crypto-primitives = { workspace = true }
 ark-ff = { workspace = true }
 ark-serialize = { workspace = true }
 clap = { workspace = true }
+common = { workspace = true }
 spongefish-pow = { workspace = true }
 spongefish = { workspace = true }
-whir-common = { workspace = true }
-# todo: whir
-
+verifier = { workspace = true }
 
 [dev-dependencies]
 divan = { version = "2.10.0", package = "codspeed-divan-compat" }

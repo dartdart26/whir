@@ -1,9 +1,6 @@
 [package]
-name = "whir-prover"
-description = "whir prover"
+name = "prover"
+description = "prover"
 version.workspace = true
 edition.workspace = true
 publish = false
-
-[features]
-# asm = ["ark-ff/asm"]
