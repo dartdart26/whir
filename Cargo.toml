@@ -67,6 +67,7 @@ debug = true
 # This profile could be used for an onchain verifier, e.g. for Solana SBF, WASM, etc.
 [profile.onchain]
 inherits = "release"
+codegen-units = 1
 debug = false
 lto = "fat"
 strip = "symbols"
