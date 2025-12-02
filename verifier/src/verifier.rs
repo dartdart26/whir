@@ -1,6 +1,6 @@
 use std::marker::PhantomData;
 
-use ark_crypto_primitives::merkle_tree::Config;
+use ark_crypto_primitives::merkle_tree::{Config, MultiPath};
 use ark_ff::FftField;
 use spongefish::{
     codecs::arkworks_algebra::{FieldToUnitDeserialize, UnitToField},
@@ -8,13 +8,14 @@ use spongefish::{
 };
 use spongefish_pow::{self, PoWChallenge};
 
+type RootPath<F, MC> = (MultiPath<MC>, Vec<Vec<F>>);
+
 use {
     common::poly_utils::{coeffs::CoefficientList, multilinear::MultilinearPoint},
     common::sumcheck::SumcheckPolynomial,
     common::utils::expand_randomness,
     common::whir::{
         merkle,
-        prover::RootPath,
         utils::{get_challenge_stir_queries, DigestToUnitDeserialize},
     },
 };

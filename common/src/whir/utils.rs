@@ -51,7 +51,7 @@ where
 ///
 /// This operates on the prover side.
 #[cfg_attr(feature = "tracing", instrument(skip(prover_state, evaluate_fn)))]
-pub(crate) fn sample_ood_points<F, ProverState, E>(
+pub fn sample_ood_points<F, ProverState, E>(
     prover_state: &mut ProverState,
     num_samples: usize,
     num_variables: usize,

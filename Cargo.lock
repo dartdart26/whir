@@ -406,6 +406,7 @@ dependencies = [
  "clap",
  "codspeed-divan-compat",
  "common",
+ "prover",
  "spongefish",
  "spongefish-pow",
  "verifier",
@@ -987,6 +988,16 @@ dependencies = [
 [[package]]
 name = "prover"
 version = "0.1.0"
+dependencies = [
+ "ark-crypto-primitives",
+ "ark-ff",
+ "ark-poly",
+ "common",
+ "rayon",
+ "spongefish",
+ "spongefish-pow",
+ "tracing",
+]
 
 [[package]]
 name = "quick-error"

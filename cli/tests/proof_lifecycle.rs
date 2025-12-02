@@ -26,11 +26,11 @@ mod tests {
             committer::{CommitmentReader, CommitmentWriter},
             domainsep::WhirDomainSeparator,
             parameters::WhirConfig,
-            prover::Prover,
             statement::{Statement, Weights},
         },
     };
 
+    use prover::Prover;
     use verifier::Verifier;
 
     /// Merkle tree configuration type for commitment layers.
