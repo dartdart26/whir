@@ -12,6 +12,7 @@ ark-ff = { workspace = true }
 ark-serialize = { workspace = true }
 clap = { workspace = true }
 common = { workspace = true }
+prover = { workspace = true }
 spongefish-pow = { workspace = true }
 spongefish = { workspace = true }
 verifier = { workspace = true }

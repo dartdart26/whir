@@ -209,8 +209,9 @@ fn run_whir_as_ldt<F, MerkleConfig>(
 {
     use common::whir::{
         committer::CommitmentWriter, domainsep::WhirDomainSeparator, parameters::WhirConfig,
-        prover::Prover,
     };
+
+    use prover::Prover;
 
     // Runs as a LDT
     let security_level = args.security_level;
@@ -330,8 +331,10 @@ fn run_whir_pcs<F, MerkleConfig>(
 {
     use common::whir::{
         committer::CommitmentWriter, domainsep::WhirDomainSeparator, parameters::WhirConfig,
-        prover::Prover, statement::Statement,
+        statement::Statement,
     };
+
+    use prover::Prover;
 
     // Runs as a PCS
     let security_level = args.security_level;
