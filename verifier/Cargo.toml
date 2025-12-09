@@ -9,6 +9,9 @@ publish = false
 ark-crypto-primitives = { workspace = true }
 ark-ff = { workspace = true }
 common = { workspace = true }
-getrandom = { version = "0.2", features = ["custom"] }
+# Use the "custom" feature for getrandom in order to silence the linker
+# when building for targets without support as the verifier doesn't need
+# randomness anyway.
+getrandom = { version = "0.2.16", features = ["custom"] }
 spongefish = { workspace = true }
 spongefish-pow = { workspace = true }
